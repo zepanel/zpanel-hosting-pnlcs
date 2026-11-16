@@ -1,0 +1,25 @@
+{
+  "name": "ZPanelHosting",
+  "displayName": "zPanel Web Hosting & Reseller Module",
+  "type": "server",
+  "version": "1.0.0",
+  "author": "zPanel Core Team",
+  "description": "PNLCS zPanel Web Hosting ve Bayi (Reseller) otomatik hesap açma, e-posta yönetimi, webmail (:8046) ve SSO paneli (:8026 / :8036).",
+  "features": [
+    "create",
+    "suspend",
+    "unsuspend",
+    "terminate",
+    "change_password",
+    "email_management",
+    "reseller_subaccounts",
+    "sso"
+  ],
+  "ports": {
+    "api": 8056,
+    "staff": 8036,
+    "client": 8026,
+    "webmail": 8046
+  }
+}
+
