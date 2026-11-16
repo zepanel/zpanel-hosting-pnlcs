@@ -186,12 +186,18 @@ class ZPanelHostingServer
         ];
     }
 
+    public function clientArea(array $params = []): array
+    {
+        return $this->renderClientArea($params);
+    }
+
     public function renderClientArea(array $params = []): array
     {
-        $domain      = $params['domain'] ?? '';
-        $serverIp    = $params['server_ip'] ?? $this->server['ip'] ?? '';
+        $p = array_merge($this->params, $params);
+        $domain      = $p['domain'] ?? '';
+        $serverIp    = $p['server_ip'] ?? $this->server['ip'] ?? '';
         $panelHost   = !empty($domain) ? $domain : $serverIp;
-        $isReseller  = !empty($params['is_reseller']);
+        $isReseller  = !empty($p['is_reseller']);
 
         $panelPort   = $isReseller ? 8036 : 8026;
         $webmailPort = 8046;
@@ -203,16 +209,17 @@ class ZPanelHostingServer
             'view' => 'modules.servers.zpanel_hosting.views.clientArea',
             'data' => [
                 'domain'        => $domain,
-                'username'      => $params['username'] ?? '',
-                'password'      => $params['password'] ?? '',
+                'username'      => $p['username'] ?? '',
+                'password'      => $p['password'] ?? '',
                 'server_ip'     => $serverIp,
                 'panel_host'    => $panelHost,
                 'panel_port'    => $panelPort,
+                'client_port'   => $panelPort,
                 'webmail_port'  => $webmailPort,
                 'is_reseller'   => $isReseller,
                 'sso_url'       => $ssoUrl,
                 'webmail_url'   => $webmailUrl,
-                'package_name'  => $params['package_name'] ?? ($isReseller ? 'Bayi Hosting' : 'Limitsiz Hosting'),
+                'package_name'  => $p['package_name'] ?? ($isReseller ? 'Bayi Hosting' : 'Limitsiz Hosting'),
             ],
         ];
     }

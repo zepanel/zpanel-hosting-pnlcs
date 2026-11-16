@@ -35,3 +35,4 @@ Accept: application/json
 | `changePassword()` | `PATCH` | `/v1/customers/:id` | Müşteri şifresini güncelleme |
 | `changePackage()` | `PATCH` | `/v1/customers/:id` | Paket, disk ve trafik kotasını güncelleme |
 | `clientArea()` | Blade | `views/clientArea.blade.php` | Müşteri paneli detay & hızlı erişim görünümü |
+
