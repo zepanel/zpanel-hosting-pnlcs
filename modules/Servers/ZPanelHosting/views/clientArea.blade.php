@@ -1,7 +1,9 @@
 {{-- zPanel Web Hosting & Reseller PNLCS Blade View --}}
 {{-- Port Mimarisi: 8026 (Client), 8036 (Root/Bayi), 8046 (Webmail), 8056 (API) --}}
 
-<div class="zp-pnlcs-hosting" style="font-family: inherit;">
+<link rel="stylesheet" href="/modules/Servers/ZPanelHosting/assets/css/client.css">
+
+<div class="zp-pnlcs-hosting">
     <!-- Üst Bilgi Kartı -->
     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
         <div class="flex justify-between items-center flex-wrap gap-4">
