@@ -1,4 +1,4 @@
-﻿# zPanel Web Hosting & Reseller Module for PNLCS
+# zPanel Web Hosting & Reseller Module for PNLCS
 
 Panelica PNLCS (Laravel 13) için zPanel Web Hosting ve Bayi eklentisi.
 
